@@ -1,4 +1,5 @@
 class Api::V1::LoginsController < ApplicationController
+    skip_before_action :authorized, only: [:create]
 
 
     def index
@@ -6,19 +7,26 @@ class Api::V1::LoginsController < ApplicationController
         render json: logins, each_serializer: LoginsSerializer
     end
 
-    # def show
-    #     login = Login.find(params[:id])
-    #     render json: accounts
-    # end
+    def show
+        # byebug
+        login = Login.find(params[:id])
+        # render json: login
+        render json: login, serializer: LoginsSerializer
+
+    end
 
     def create
-        @login = Login.create(login_params)
+        # byebug;
+        login = Login.create(login_params)
+        # byebug
     end
 
 
 
-    private
+    # private
     def login_params
-      params.require(:login).permit(:username, :password, :account_id)
+        # byebug
+        params.require(:login).permit(:account_id, :username, :password_digest)
+        # byebug
     end
 end
