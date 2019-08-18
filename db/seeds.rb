@@ -14,7 +14,7 @@ user1 = User.create(username: "Sarah", password: "12345", email: "something@emai
         password4 = Password.create(login_id: login4.id, password_digest: "fjkdslashorter")
 
     account3 = Account.create(user_id: user1.id, account_name: "Reddit")
-        login3 = Login.create(username: "sarah.first@gmail.com",  account_id: account3.id)
+        login3 = Login.create(username: "sarah.first22@gmail.com",  account_id: account3.id)
         password3 = Password.create(login_id: login3.id, password_digest: "fjkdslashorter")
 
 
