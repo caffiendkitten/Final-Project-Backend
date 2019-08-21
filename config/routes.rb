@@ -6,12 +6,13 @@ Rails.application.routes.draw do
       resources :passwords
       resources :logins, only: [:create, :destroy, :edit, :update]
       resources :accounts, only: [:create, :destroy]
-      resources :users, only: [:create]
+      resources :users, only: [:create, :update]
 
       post '/login', to: 'auth#create'
 
       get 'users' => 'users#index'
       get 'users/:id' => 'users#show'
+
 
       get 'accounts' => 'accounts#index'
       delete 'accounts' => 'accounts#destroy'

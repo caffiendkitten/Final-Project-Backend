@@ -19,6 +19,7 @@ class Api::V1::LoginsController < ApplicationController
     def create
         # byebug;
         login = Login.create(login_params)
+        render json: login
         # byebug
     end
 

@@ -12,6 +12,7 @@ class Api::V1::AccountsController < ApplicationController
 
     def create
         @account = Account.create(account_params)
+        render json: @account
     end
 
     def destroy
@@ -24,6 +25,6 @@ class Api::V1::AccountsController < ApplicationController
 
     private
       def account_params
-        params.require(:account).permit(:account_name, :user_id)
+        params.require(:account).permit(:id, :account_name, :user_id)
       end
 end
