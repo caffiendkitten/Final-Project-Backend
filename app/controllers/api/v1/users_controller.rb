@@ -1,5 +1,6 @@
 class Api::V1::UsersController < ApplicationController
     skip_before_action :authorized, only: [:create]
+    before_action :set_params, only: [:edit, :update]
 
     def index
         users = User.all
@@ -22,10 +23,31 @@ class Api::V1::UsersController < ApplicationController
           render json: { error: 'failed to create user' }, status: :not_acceptable
         end
     end
-     
+
+
+    
+    def edit
+    end
+    def update
+      if @user.update(user_params)
+        redirect_to @user
+      else
+        render :edit
+      end
+    end
+    
+
+
+
+    def set_params
+      @user = User.find(params[:id])
+    end
+
     private
       def user_params
         params.require(:user).permit(:username, :password, :email)
       end
+
+      
 
 end
