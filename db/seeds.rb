@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user1 = User.create(username: "Sarah", password: "123456789", email: "something@emails.com")
+user1 = User.create(username: "Sarah1234", password: "123456789", email: "something@emails.com")
     account1 = Account.create(user_id: user1.id, account_name: "Google")
         login1 = Login.create(username: "SaRaH1",  account_id: account1.id, password_digest: "2b6caaac4c6f56ada595468078e8acd5b38f17097c")
         # password1 = Password.create(login_id: login1.id, password_digest: "fjdskla;fdksa;fjkdsla;")
@@ -18,7 +18,7 @@ user1 = User.create(username: "Sarah", password: "123456789", email: "something@
         # password3 = Password.create(login_id: login3.id, password_digest: "fjkdslashorter")
 
 
-user2 = User.create(username: "Jake", password: "123456789", email: "somethingelse@emails.com")
+user2 = User.create(username: "Jake13223", password: "123456789", email: "somethingelse@emails.com")
     account2 = Account.create(user_id: user2.id, account_name: "Facebook")
         login2 = Login.create(username: "Jake123",  account_id: account2.id, password_digest: "2b6caaac4c6f56ada595468078e8acd5b38f17097c")
         # password2 = Password.create(login_id: login2.id, password_digest: "fjdskla;fdksa;fjkdsla;")

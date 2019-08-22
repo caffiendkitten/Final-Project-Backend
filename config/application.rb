@@ -22,6 +22,9 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# ness for keys
+Dotenv::Railtie.load
+
 module FinalProjectBackend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
