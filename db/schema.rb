@@ -25,17 +25,17 @@ ActiveRecord::Schema.define(version: 2019_08_18_154204) do
   create_table "logins", force: :cascade do |t|
     t.integer "account_id"
     t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "password_digest"
+  end
+
+  create_table "passwords", force: :cascade do |t|
+    t.string "password_digest"
+    t.integer "login_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  # create_table "passwords", force: :cascade do |t|
-  #   t.string "password_digest"
-  #   t.integer "login_id"
-  #   t.datetime "created_at", null: false
-  #   t.datetime "updated_at", null: false
-  # end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
